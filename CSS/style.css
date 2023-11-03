@@ -235,33 +235,16 @@ p {
 
 @media only screen and (min-width: 300px) and (max-width: 400px) {
 
-  .player {
-    /* border: 2px solid blue; */
-  }
-
   .wrapper {
     border: 1px solid transparent;
-    /* border: 2px solid red; */
-
     padding: 15px 25px;
-
     border-radius: 15px;
-    background-color: #ddd;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     padding-bottom: 25px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
   }
-
-  .details {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   .track-art {
     margin: 10px;
     height: 150px;
@@ -271,7 +254,6 @@ p {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    /* border: 2px solid blue; */
   }
 
   .buttons {

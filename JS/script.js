@@ -22,25 +22,25 @@ let updateTimer;
 
 const music_list = [
     {
-        img : 'images/image2.jpg',
+        img : 'images/image1.jpeg',
         name : 'سورة الكافرون',
         artist : 'Maher Al Muaiqly',
         music : 'music/Surat Al-kafron _ ماهر المعيقلي سورة الكافرون(MP3_320K).mp3'
     },
     {
-        img : 'images/image3.jpg',
+        img : 'images/image2.jpg',
         name : 'سورة الكوثر',
         artist : 'Maher Al Muaiqly',
         music : 'music/Surat Al-kothar _ ماهر المعيقلي سورة الكوثر(MP3_320K).mp3'
     },
     {
-        img : 'images/image4.jpg',
+        img : 'images/image3.jpg',
         name : 'سورة الماعون',
         artist : 'Maher Al Muaiqly',
         music : 'music/Surat Al-maaon _ ماهر المعيقلي سورة الماعون(MP3_320K).mp3'
     },
     {
-        img : 'images/image1.jpeg',
+        img : 'images/image4.jpeg',
         name : 'سورة عبس',
         artist : 'Maher Al Muaiqly',
         music : 'music/Surat Aabs _ ماهر المعيقلي سورة عبس(MP3_320K).mp3'

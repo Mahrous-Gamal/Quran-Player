@@ -16,10 +16,6 @@ body {
 
 .player {
   width: fit-content;
-  /* border: 2px solid blue; */
-  /* margin: auto; */
-
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -93,7 +89,6 @@ body {
 .playpause-track,
 .prev-track,
 .next-track {
-  /* padding: 25px; */
   opacity: 0.8;
   transition: opacity .2s;
 }
@@ -242,14 +237,13 @@ p {
 
   .player {
     /* border: 2px solid blue; */
-    /* padding: 0 !important; */
   }
 
   .wrapper {
     border: 1px solid transparent;
     /* border: 2px solid red; */
 
-    padding: 15px 10px;
+    padding: 15px 25px;
 
     border-radius: 15px;
     background-color: #ddd;
@@ -281,7 +275,6 @@ p {
   }
 
   .buttons {
-    /* border: 2px solid green; */
     display: flex;
     justify-content: space-between;
   }
@@ -291,7 +284,6 @@ p {
   }
 
   .btn-icon-play {
-    /* border: 2px solid blue; */
     font-size: 45px !important;
  
   }

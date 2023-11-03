@@ -7,6 +7,7 @@
 
 ![image](https://github.com/Mahrous-Gamal/Quran-Player/assets/105131896/cac5132a-9f36-4c99-bb00-e768aaec22db)
 
+![image](https://github.com/Mahrous-Gamal/Quran-Player/assets/105131896/89cd4414-0036-4b86-82d5-d29f1ca63003)
 
 ### Prerequisites
 

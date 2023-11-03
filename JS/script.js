@@ -307,14 +307,14 @@ function playTrack(){
     isPlaying = true;
     track_art.classList.add('rotate');
     wave.classList.add('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x btn-icon-play"></i>';
 }
 function pauseTrack(){
     curr_track.pause();
     isPlaying = false;
     track_art.classList.remove('rotate');
     wave.classList.remove('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x btn-icon-play"></i>';
 }
 function nextTrack(){
     if(track_index < music_list.length - 1 && isRandom === false){

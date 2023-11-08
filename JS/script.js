@@ -40,7 +40,7 @@ const music_list = [
         music : 'music/Surat Al-maaon _ ماهر المعيقلي سورة الماعون(MP3_320K).mp3'
     },
     {
-        img : 'images/image4.jpeg',
+        img : 'images/image4.jpg',
         name : 'سورة عبس',
         artist : 'Maher Al Muaiqly',
         music : 'music/Surat Aabs _ ماهر المعيقلي سورة عبس(MP3_320K).mp3'

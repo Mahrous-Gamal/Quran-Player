@@ -505,7 +505,7 @@ function loadTrack(track_index){
 
 
     track_art.style.backgroundImage = "url(" + surah_list[track_index].img + ")";
-    fetch("http://api.alquran.cloud/v1/meta")
+    fetch("https://api.alquran.cloud/v1/meta")
     .then(response => response.json())
     .then(data => {
         let surahs = data.data.surahs.references;      

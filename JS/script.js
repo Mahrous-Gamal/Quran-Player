@@ -488,7 +488,7 @@ const surah_list = [
     },
     {
         img : 'images/image4.jpg',
-        surah : 'hhttps://server12.mp3quran.net/maher/114.mp3'
+        surah : 'https://server12.mp3quran.net/maher/114.mp3'
     },
 ];
 

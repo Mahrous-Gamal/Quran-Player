@@ -20,224 +20,478 @@ let isPlaying = false;
 let isRandom = false;
 let updateTimer;
 
-const music_list = [
+const surah_list = [
     {
         img : 'images/image1.jpeg',
-        name : 'سورة الكافرون',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Al-kafron _ ماهر المعيقلي سورة الكافرون(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/001.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة الكوثر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Al-kothar _ ماهر المعيقلي سورة الكوثر(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/002.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة الماعون',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Al-maaon _ ماهر المعيقلي سورة الماعون(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/003.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة عبس',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Aabs _ ماهر المعيقلي سورة عبس(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/004.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة الشمس',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Al-shamms _ ماهر المعيقلي سورة الشمس(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/005.mp3'
     },
-    {
-        img : 'images/image6.jpg',
-        name : 'سورة الاعلى',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alaala _ ماهر المعيقلي سورة الاعلى(MP3_320K).mp3'
-    },
+
     {
         img : 'images/image1.jpeg',
-        name : 'سورة العاديات',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Aladiat _ ماهر المعيقلي سورة العاديات(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/006.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة الإخلاص',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alakhlas _ ماهر المعيقلي سورة الإخلاص(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/007.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة العلق',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alalq _ ماهر المعيقلي سورة العلق(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/008.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة الانفطار',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alanfetar _ ماهر المعيقلي سورة الانفطار(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/009.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة الانشقاق',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alanshqaq _ ماهر المعيقلي سورة الانشقاق(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/010.mp3'
     },
-    {
-        img : 'images/image6.jpg',
-        name : 'سورة العصر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alasr _ ماهر المعيقلي سورة العصر(MP3_320K).mp3'
-    },
+
     {
         img : 'images/image1.jpeg',
-        name : 'سورة البلد',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Albald _ ماهر المعيقلي سورة البلد(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/011.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة البينه',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Albenh _ ماهر المعيقلي سورة البينه(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/012.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة البروج',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Albroj _ ماهر المعيقلي سورة البروج(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/013.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة الضحى',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat AlDuha _ ماهر المعيقلي سورة الضحى(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/014.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة الفيل',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alfel _ ماهر المعيقلي سورة الفيل(MP3_320K).mp3'
-    },
-    {
-        img : 'images/image6.jpg',
-        name : 'سورة الفلق',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alfilq _ ماهر المعيقلي سورة الفلق(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/015.mp3'
     },
     {
         img : 'images/image1.jpeg',
-        name : 'سورة الفجر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alfjr _ ماهر المعيقلي سورة الفجر(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/016.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة الغاشية',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Algasheh _ ماهر المعيقلي سورة الغاشية(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/017.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة الهمزة',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alhomzah _ ماهر المعيقلي سورة الهمزة(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/018.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة القدر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat ALkaddr _ ماهر المعيقلي سورة القدر(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/019.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة الليل',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Allil _ ماهر المعيقلي سورة الليل(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/020.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/021.mp3'
     },
     {
-        img : 'images/image6.jpg',
-        name : 'سورة المسد',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Almassad _ ماهر المعيقلي سورة المسد(MP3_320K).mp3'
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/022.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/023.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/024.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/025.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/026.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/027.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/028.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/029.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/030.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/031.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/032.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/033.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/034.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/035.mp3'
     },
     {
         img : 'images/image1.jpeg',
-        name : 'سورة المطففين',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat AlMutaffen _ ماهر المعيقلي سورة المطففين(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/036.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة الناس',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alnnas _ ماهر المعيقلي سورة الناس(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/037.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة النصر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alnnsr _ ماهر المعيقلي سورة النصر(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/038.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة القارعه',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alqariah _ ماهر المعيقلي سورة القارعه(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/039.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة الشرح',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alsharh _ ماهر المعيقلي سورة الشرح(MP3_320K).mp3'
-    },
-    {
-        img : 'images/image6.jpg',
-        name : 'سورة الطارق',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat ALTarrq _ ماهر المعيقلي سورة الطارق(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/040.mp3'
     },
     {
         img : 'images/image1.jpeg',
-        name : 'سورة التكوير',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Altkwer _ ماهر المعيقلي سورة التكوير(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/041.mp3'
     },
     {
         img : 'images/image2.jpg',
-        name : 'سورة التين',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Alttin _ ماهر المعيقلي سورة التين(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/042.mp3'
     },
     {
         img : 'images/image3.jpg',
-        name : 'سورة الزلزله',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat alzlzlh _ ماهر المعيقلي سورة الزلزله(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/043.mp3'
     },
     {
         img : 'images/image4.jpg',
-        name : 'سورة التكاثر',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Atakathur _ ماهر المعيقلي سورة التكاثر(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/044.mp3'
     },
     {
         img : 'images/image5.jpg',
-        name : 'سورة قريش',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/Surat Quraish _ ماهر المعيقلي سورة قريش(MP3_320K).mp3'
+        surah : 'https://server12.mp3quran.net/maher/045.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/046.mp3'
     },
     {
-        img : 'images/image6.jpg',
-        name : 'سورة الفاتحه',
-        artist : 'Maher Al Muaiqly',
-        music : 'music/ماهر المعيقلي سورة الفاتحه  _  Surat Al-Fatihah(MP3_320K).mp3'
-    }
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/047.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/048.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/049.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/050.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/051.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/052.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/053.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/054.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/055.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/056.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'hhttps://server12.mp3quran.net/maher/057.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/058.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/059.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/060.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/061.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/062.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/063.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/064.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/065.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/066.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/067.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/068.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/069.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/070.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/071.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/072.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/073.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/074.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/075.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/076.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/077.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/078.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/079.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/080.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/081.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/082.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/083.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/004.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/085.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/086.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/087.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/088.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/089.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/090.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/091.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/092.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/093.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/094.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/095.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/096.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/097.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/098.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/099.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/100.mp3'
+    },
+
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/101.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/102.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/103.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/104.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/105.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/106.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/107.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/108.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'https://server12.mp3quran.net/maher/109.mp3'
+    },
+    {
+        img : 'images/image5.jpg',
+        surah : 'https://server12.mp3quran.net/maher/110.mp3'
+    },
+    {
+        img : 'images/image1.jpeg',
+        surah : 'https://server12.mp3quran.net/maher/111.mp3'
+    },
+    {
+        img : 'images/image2.jpg',
+        surah : 'https://server12.mp3quran.net/maher/112.mp3'
+    },
+    {
+        img : 'images/image3.jpg',
+        surah : 'https://server12.mp3quran.net/maher/113.mp3'
+    },
+    {
+        img : 'images/image4.jpg',
+        surah : 'hhttps://server12.mp3quran.net/maher/114.mp3'
+    },
 ];
+
 
 loadTrack(track_index);
 
@@ -245,13 +499,22 @@ function loadTrack(track_index){
     clearInterval(updateTimer);
     reset();
 
-    curr_track.src = music_list[track_index].music;
+
+    curr_track.src = surah_list[track_index].surah;
     curr_track.load();
 
-    track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
-    track_name.textContent = music_list[track_index].name;
-    track_artist.textContent = music_list[track_index].artist;
-    now_playing.textContent = "Playing music " + (track_index + 1) + " of " + music_list.length;
+
+    track_art.style.backgroundImage = "url(" + surah_list[track_index].img + ")";
+    fetch("http://api.alquran.cloud/v1/meta")
+    .then(response => response.json())
+    .then(data => {
+        let surahs = data.data.surahs.references;      
+            track_name.innerHTML= `${surahs[track_index].name}`;
+
+    })
+
+    track_artist.textContent = "Maher Al Muaiqly";
+    now_playing.textContent = "Playing " + (track_index + 1) + " of " +114;
 
     updateTimer = setInterval(setUpdate, 1000);
 
@@ -317,10 +580,10 @@ function pauseTrack(){
     playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x btn-icon-play"></i>';
 }
 function nextTrack(){
-    if(track_index < music_list.length - 1 && isRandom === false){
+    if(track_index < surah_list.length - 1 && isRandom === false){
         track_index += 1;
-    }else if(track_index < music_list.length - 1 && isRandom === true){
-        let random_index = Number.parseInt(Math.random() * music_list.length);
+    }else if(track_index < surah_list.length - 1 && isRandom === true){
+        let random_index = Number.parseInt(Math.random() * surah_list.length);
         track_index = random_index;
     }else{
         track_index = 0;
@@ -332,7 +595,7 @@ function prevTrack(){
     if(track_index > 0){
         track_index -= 1;
     }else{
-        track_index = music_list.length -1;
+        track_index = surah_list.length -1;
     }
     loadTrack(track_index);
     playTrack();

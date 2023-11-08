@@ -407,11 +407,11 @@ const surah_list = [
     },
     {
         img : 'images/image4.jpg',
-        surah : 'https://server12.mp3quran.net/maher/094.mp3'
+        surah : 'https://download.ourquraan.com/Maher-Alm3eqly(mo3alem)/094.mp3'
     },
     {
         img : 'images/image5.jpg',
-        surah : 'https://server12.mp3quran.net/maher/095.mp3'
+        surah : 'https://download.ourquraan.com/Maher_Al-Muaiqly/095.mp3'
     },
     {
         img : 'images/image1.jpeg',

@@ -5,7 +5,7 @@
 
 ## [Website Demo](https://mahrous-gamal.github.io/Quran-Player/)
 
-![image](https://github.com/Mahrous-Gamal/Quran-Player/assets/105131896/526844a6-7ad1-4750-86dc-43013b9c30d9)
+![image](https://github.com/Mahrous-Gamal/Quran-Player/assets/105131896/81a62bc9-d827-4ae2-961a-f8672811b0e5)
 
 
 ### Prerequisites
